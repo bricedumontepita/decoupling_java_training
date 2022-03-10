@@ -7,6 +7,6 @@ public class LoggerFactory
 {
     public static Logger getLogger(String name)
     {
-        return new ContextualLogger(name, new FileLogger("toto.txt"));
+        return new ContextualLogger(name, new CompositeLogger( new FileLogger("toto.txt"), new ConsoleLogger()));
     }
 }
