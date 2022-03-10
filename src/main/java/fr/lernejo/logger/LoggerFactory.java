@@ -7,6 +7,10 @@ public class LoggerFactory
 {
     public static Logger getLogger(String name)
     {
-        return new ContextualLogger(name, new CompositeLogger( new FileLogger("toto.txt"), new ConsoleLogger()));
+        return new ContextualLogger(name, new CompositeLogger(
+            new FilteredLogger(
+                new FileLogger("toto.txt"), s -> s.contains("simulation")
+                ),
+            new ConsoleLogger()));
     }
 }
