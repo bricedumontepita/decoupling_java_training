@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Launcher {
 
     public static void main(String[] args) {
-        Logger logger = LoggerFactory.getLogger("simulation");
+        Logger logger = LoggerFactory.getLogger("Launcher");
 
         if (args.length >= 1 && args[0].equals("-interactive")){
             HumanPlayer2 player = new HumanPlayer2();
